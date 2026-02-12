@@ -1,0 +1,16 @@
+app = "bot-romantico"   # Nome do seu app no Fly.io
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
+BOT_TOKEN = "coloque_seu_token_aqui"
+GROQ_API_KEY = "coloque_sua_groq_key_aqui"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
